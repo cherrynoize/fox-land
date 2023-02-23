@@ -1,0 +1,5 @@
+ TODO
+-----------------------------------------------------------------
+- click outside of search box makes unfocus and reset search box
+  value (but not command)
+- / or esc when search box is unfocused puts it into focus
