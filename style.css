@@ -293,9 +293,11 @@ a:hover {
 }
 
 .blocks .block.hidden {
+    z-index: -1;
     position: absolute;
     max-height: 0;
     opacity: 0;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 1000px) {
