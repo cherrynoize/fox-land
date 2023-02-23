@@ -3,3 +3,9 @@
 - click outside of search box makes unfocus and reset search box
   value (but not command)
 - / or esc when search box is unfocused puts it into focus
+- theme support by giving body class name of the theme (e.g:
+  cyberpunk-neon-theme), in which we assign a var --primary,
+  --secondary, --background, etc. to the theme colors, and
+  setting all colors within the body to --primary, etc. variables
+  (this way we can easily switch between themes by just changing
+  the body's class to a different "-theme" class.)
