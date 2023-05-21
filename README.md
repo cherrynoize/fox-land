@@ -1,3 +1,3 @@
 # fox-land
 
-my own firefox startpage.
+my own firefox startpage
