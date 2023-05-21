@@ -72,10 +72,7 @@ if (search) {
   search.addEventListener("keyup", function(e) {
     var value = search.value;
 
-    if (value.indexOf("/?") == 0) {
-      help.style.opacity = 1;
-      help.style["max-height"] = "50vh";
-    } else if (e.keyCode == 13 || e.which == 13) {
+    if (e.keyCode == 13 || e.which == 13) {
       if (value.indexOf(".") > 0) {
         window.location.href = "http://" + encodeURIComponent(value);
       } else {
@@ -87,6 +84,9 @@ if (search) {
       value = value.trim();
       // set new command
       setCommand(value);
+    } else if (value.indexOf("/") == 0 && value.length <= 2) {
+      help.style.opacity = 1;
+      help.style["max-height"] = "50vh";
     }
   });
 
@@ -99,6 +99,9 @@ if (search) {
       key = isBackspace(value) ? 8 : 0;
     }
 
+    help.style.opacity = 0;
+    help.style["max-height"] = "20px";
+
     if (key == 8 || key == 27) { // backspace or esc is pressed
       // empty or /? search box
       if ((value == "" && command.icon != commands[0].icon)
@@ -109,8 +112,6 @@ if (search) {
         search.value = "";
         form.setAttribute("action", command.url);
       }
-      help.style.opacity = 0;
-      help.style["max-height"] = "20px";
     } else if (key == 9) {
       // lock tab in search bar
       e.preventDefault();

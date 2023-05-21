@@ -3,7 +3,7 @@
     --red: #773d45;
     --pink: #ff92d1;
     --neon-darkblue: #091833;
-    --neon-blue: #133e7c;
+    --neon-blue: #236e9c;
     --neon-lightblue: #0abdc6;
     --neon-pink: #ea00d9;
  	--neon-purple: #711c91;
@@ -112,14 +112,8 @@ a:hover {
     gap: 10px;
 }
 
-#search-form,
-#block-menu,
-.blocks {
-    box-shadow: 0 0 35px 8px var(--neon-blue);
-}
-
-.blocks > * {
-    box-shadow: 0 0 15px 3px var(--neon-lightblue);
+#search-form {
+    box-shadow: 0 0 20px 1px var(--neon-blue);
 }
 
 .search-block {
@@ -128,9 +122,16 @@ a:hover {
     text-align: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1500px) {
     .search-block {
         width: 60%;
+        margin: 5vh auto 0vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .search-block {
+        width: 80%;
         margin: 5vh auto 0vh;
     }
 }
@@ -216,8 +217,8 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     width: 100%;
     max-width: 800px;
     max-height: 1000vh;
@@ -248,12 +249,17 @@ a:hover {
 .block:nth-child(13) { grid-area: 4 / 13 / 5 / 19; }
 .block:nth-child(14) { grid-area: 4 / 19 / 5 / 25; }
 
-.block:nth-child(15) { grid-area: 5 / 1 / 6 / 13; }
-.block:nth-child(16) { grid-area: 5 / 13 / 6 / 25; }
+.block:nth-child(15) { grid-area: 5 / 1 / 6 / 7; }
+.block:nth-child(16) { grid-area: 5 / 7 / 6 / 13; }
+.block:nth-child(17) { grid-area: 5 / 13 / 6 / 25; }
 
-.block:nth-child(17) { grid-area: 6 / 1 / 7 / 11; }
-.block:nth-child(18) { grid-area: 6 / 11 / 7 / 19; }
-.block:nth-child(19) { grid-area: 6 / 19 / 7 / 25; }
+.block:nth-child(18) { grid-area: 6 / 1 / 7 / 11; }
+.block:nth-child(19) { grid-area: 6 / 11 / 7 / 19; }
+.block:nth-child(20) { grid-area: 6 / 19 / 7 / 25; }
+
+.blocks > * {
+    box-shadow: 0 0 5px 1px var(--neon-blue);
+}
 
 .blocks .block {
     flex: 1;
@@ -261,10 +267,12 @@ a:hover {
     padding: 10px 15px;
     background-color: #16161633;
     border: 1px solid #222;
+    border-radius: 5px;
     text-shadow: 0 0 2px var(--neon-darkblue);
-    min-width: 160px;
+    min-width: 5vw;
     max-height: 50vh;
     opacity: 1;
+    overflow: scroll;
     transition: .6s max-height, .2s opacity;
 }
 
@@ -282,6 +290,7 @@ a:hover {
 .blocks .block.hori {
     display: flex;
     flex-flow: row nowrap;
+    gap: 1vw;
 }
 
 .blocks .block li {
@@ -290,6 +299,10 @@ a:hover {
 
 .blocks .block .header {
     color: #95edfd;
+}
+
+.blocks .block .header ~ .header {
+    margin-top: 10px;
 }
 
 .blocks .block.hidden {
